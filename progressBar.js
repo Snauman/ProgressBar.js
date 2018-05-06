@@ -23,6 +23,7 @@ function ProgressBar(name,x,y,w,h,state){
      /** @private*/this.canvas.width = w;
      /** @private*/this.borderColor="rgb(0,0,0)";
      /** @private*/this.fillingColor="rgb(0,200,0)";
+     /**@private */this.rotation=0;
     this.display();
 }
 
@@ -160,4 +161,12 @@ ProgressBar.prototype.setName=function(name){
  */
 ProgressBar.prototype.getName=function(){
     return this.canvas.id;
+}
+
+/**
+ * Rotate the progress bar
+ */
+ProgressBar.prototype.rotate=function(angle){
+    this.rotation+=angle
+    this.canvas.style.transform="rotate("+this.rotation+"deg)"
 }
